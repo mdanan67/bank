@@ -8,32 +8,32 @@
   </head>
   <body class="m-0 p-0 bg-[#7778A1]">
     <div class="flex justify-center items-center h-screen w-screen">
-      <div class="bg-slate-500 w-[600px]">
-        <div class="my-6 font-bold text-center text-[25px]">
-          Welcome To Youe Calculator
+      <div class="bg-[#4F4E42] w-[600px] rounded-xl">
+        <div class="my-6 font-bold text-center text-[25px] text-[#A7CCAA]">
+          Welcome To Your Own Bank
         </div>
-        <div class="px-7">
-          <label class="font-bold" for="">Email</label>
+        <div class="px-13">
+          <label class="font-bold text-[#7AA8CC]" for="">Email</label>
           <input
             id="email"
-            class="block border border-black p-2 my-2 w-full bg-teal-400 border-none outline-none"
+            class="block border border-black p-2 my-2 w-full bg-[#A19A8D] border-none outline-none"
             type="text"
             placeholder="Enter your mail"
             value=""
           />
-          <label class="font-bold" for="">Password</label>
+          <label class=" text-[#7AA8CC] font-bold" for="">Password</label>
           <input
             id="password"
-            class="block border border-black p-2 w-full bg-teal-400 border-none outline-none"
+            class="block border border-black p-2 w-full bg-[#A19A8D] border-none outline-none"
             type="text"
             placeholder="Enter your password"
             value=""
           />
         </div>
-        <div class="m-3 px-5">
+        <div class="m-5 px-10"">
           <button
             onClick="getUserInfo()"
-            class="font-bold px-[30px] py-[10px] items-center rounded-[6px] bg-[#CD60EB]"
+            class="font-bold px-[30px] py-[10px] items-center rounded-[10px] bg-[#A3D6A3] cursor-pointer hover:bg-[#1ED931] transition-all duration-200"
             id="btn"
           >
             Login
@@ -51,7 +51,7 @@
         if (email == "rolex@gamail.com" && password == 123456) {
           window.location.href = "./bank.html";
         } else {
-          alert("wront pass or email");
+          alert("Wrong pass or email !\nYour email: rolex@gmail.com and  pass: 123456");
         }
       }
     </script>

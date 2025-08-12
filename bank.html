@@ -10,50 +10,111 @@
     <div class="px-10 flex">
       <div
         class="grid grid-cols-3 mx-[100px] my-[100px] justify-between w-full h-[200px] gap-10"
-           >
+      >
         <div class="h-[170px] p-[20px] bg-[#7B50D9] rounded-[10px]">
           <h1 class="font-bold text-[25px]">Deposit</h1>
-          <div ">
-            <span class="flex font-bold text-[25px]" 
-              >$ <input type="number" value="00" class="border-none" readonly
+          <div class="mt-2">
+            <span class="flex font-bold text-[25px]"
+              >$
+              <input
+                id="deposit"
+                type="number"
+                value="00"
+                class="border-none"
+                readonly
             /></span>
           </div>
         </div>
-        <div class="h-[170px] bg-[#995A5A]  p-[20px] rounded-[10px]">   
-            <h1 class="font-bold text-[25px]">Withdrow</h1>
-           <div>
-            <span class="flex font-bold text-[25px]" 
-              >$ <input type="number" value="00" class="border-none" readonly
+        <div class="h-[170px] bg-[#995A5A] p-[20px] rounded-[10px]">
+          <h1 class="font-bold text-[25px]">Withdraw</h1>
+          <div class="mt-2">
+            <span class="flex font-bold text-[25px]"
+              >$
+              <input
+                id="withdrow"
+                type="number"
+                value="00"
+                class="border-none"
+                readonly
             /></span>
-           </div>
+          </div>
         </div>
-        <div class="h-[170px] bg-[#445E66]  p-[20px] rounded-[10px]">   
-            <h1 class="font-bold text-[25px]">Balance</h1>
-           <div>
-            <span class="flex font-bold text-[25px]" 
-              >$ <input type="number" value="500" class="border-none" readonly
+        <div class="h-[170px] bg-[#445E66] p-[20px] rounded-[10px]">
+          <h1 class="font-bold text-[25px]">Balance</h1>
+          <div class="mt-2">
+            <span class="flex font-bold text-[25px]"
+              >$
+              <input
+                id="currentBalance"
+                type="number"
+                value="500"
+                class="border-none"
+                readonly
             /></span>
-           </div>
+          </div>
         </div>
       </div>
-   
     </div>
-    <div class="flex px-[200px] h-[300px] w-full justify-between items-center gap-10 ">
-        <div class="bg-[#ADA1C4] w-1/2 h-full rounded-[15px] p-16" >
-            <h1 class="font-bold text-[25px]">Deposit Ammount</h1>
-            <input  placeholder="$ deposit ammpunt"type="number" name="" id=""
-            class="border-none p-2 bg-[#B2B6D1] my-5 ">
-            <button class="flex bg-[#402C36] text-white rounded-[19px] px-4 py-3 font-bold  ">Deposit</button>
-        </div>
-            <div class="bg-[#96929C] w-1/2 h-full rounded-[15px] p-16" >
-            <h1 class="font-bold text-[25px]">Withdeow Ammount</h1>
-            <input  placeholder="$ withdeow ammpunt"type="number" name="" id=""
-            class="border-none p-2 bg-[#B2B6D1] my-5 ">
-            <button class="flex bg-[#402C36] text-white rounded-[17px] px-3 py-3 font-bold  ">Withdrow</button>
-        </div>
+    <div
+      class="flex px-[300px] h-[300px] w-full justify-between items-center gap-10"
+    >
+      <div class="bg-[#ADA1C4] w-1/2 h-full rounded-[15px] p-16">
+        <h1 class="font-bold text-[25px]">Deposit Amount</h1>
+        <input
+          placeholder="$ deposit amount "
+          type="number"
+          name=""
+          id="depositValue"
+          class="border-none p-2 bg-[#B2B6D1] my-5"
+        />
+        <button
+          onclick="setDeposit()"
+          class="hover:bg-sky-700 cursor-pointer flex bg-[#402C36] text-white rounded-[19px] px-4 py-3 font-bold"
+        >
+          Deposit
+        </button>
+      </div>
+      <div class="bg-[#96929C] w-1/2 h-full rounded-[15px] p-16">
+        <h1 class="font-bold text-[25px]">Withdraw Ammount</h1>
+        <input
+          placeholder="$ withdraw amount "
+          type="number"
+          name=""
+          id="withdeowAmmount"
+          class="border-none p-2 bg-[#B2B6D1] my-5"
+        />
+        <button
+          onclick="withdrowAmmountSet()"
+          class="hover:bg-sky-700 cursor-pointer flex bg-[#402C36] text-white rounded-[17px] px-3 py-3 font-bold"
+        >
+          Withdrow
+        </button>
+      </div>
     </div>
     <script>
-      const withdrow=document.getElementById("")
+      function setDeposit() {
+        const depositValue = Number(
+          document.getElementById("depositValue").value
+        );
+        const balance = document.getElementById("currentBalance");
+        const currentBalance = Number(balance.value);
+        balance.value = currentBalance + depositValue;
+
+        const deposit = document.getElementById("deposit");
+        const currentDeposit = Number(deposit.value);
+        deposit.value = depositValue + currentDeposit;
+      }
+      function withdrowAmmountSet() {
+        const withdeow = document.getElementById("withdrow");
+        const withdrawAmount = Number(
+          document.getElementById("withdeowAmmount").value
+        );
+        const balance = document.getElementById("currentBalance");
+        const currentBalance = Number(balance.value);
+
+        withdeow.value = withdrawAmount;
+        balance.value = currentBalance - withdrawAmount;
+      }
     </script>
   </body>
 </html>
