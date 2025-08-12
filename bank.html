@@ -3,19 +3,47 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <title>Home</title>
   </head>
-  <body class="w-screen h-screen p-0 m-0">
-    <div class="">
-      <div>
-        <div>Deposit</div>
-        <div>Withdeow</div>
-        <div>Balance</div>
+  <body class="p-0 m-0 bg-slate-400">
+    <div class="px-10 flex">
+      <div
+        class="grid grid-cols-3 mx-[100px] my-[100px] justify-between w-full h-[500px] gap-10"
+           >
+        <div class="h-[170px] bg-slate-500 p-[20px]">
+          <h1 class="font-bold text-[25px]">Deposit</h1>
+          <div ">
+            <span class="flex font-bold text-[25px]" 
+              >$ <input type="number" value="500" class="border-none" readonly
+            /></span>
+          </div>
+        </div>
+        <div class="h-[170px] bg-slate-500  p-[20px]">   
+            <h1 class="font-bold text-[25px]">Withdrow</h1>
+           <div>
+            <span class="flex font-bold text-[25px]" 
+              >$ <input type="number" value="500" class="border-none" readonly
+            /></span>
+           </div>
+        </div>
+        <div class="h-[170px] bg-slate-500  p-[20px]">   
+            <h1 class="font-bold text-[25px]">Balance</h1>
+           <div>
+            <span class="flex font-bold text-[25px]" 
+              >$ <input type="number" value="500" class="border-none" readonly
+            /></span>
+           </div>
+        </div>
       </div>
-      <div>
-        <div></div>
-        <div></div>
-      </div>
+   
     </div>
+    <div>
+        <div>the section</div>
+        <div>the section</div>
+    </div>
+    <script>
+      console.log("heii");
+    </script>
   </body>
 </html>
